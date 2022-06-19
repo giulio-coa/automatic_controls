@@ -77,6 +77,9 @@ figure, step(W / dcgain(W))
 % Valutazioni extra
 u = 1.052 % runna schema Simulink e trova il valore massimo dallo scope di u
 
+W_u = feedback(C, F_1 * F_2 / K_r); % in alternativa all'uso di Simulink, si può ricorrere a questo comando evidenziando il peak response
+figure, step(W_u)
+
 % Discretizzazione
 w_b = 4.28;
 T_1 = (2 * pi) / (20 * w_b)
